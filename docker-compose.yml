@@ -55,8 +55,6 @@ services:
       options:
         max-file: '${LOG_FILE_NUM}'
         max-size: '${LOG_FILE_SIZE}'
-    networks:
-      - web
     command: tunnel --no-autoupdate run --token ${CLOUDFLARED_TOKEN}
 
   # ----------------------------------------
@@ -72,8 +70,6 @@ services:
       options:
         max-file: '${LOG_FILE_NUM}'
         max-size: '${LOG_FILE_SIZE}'
-    networks:
-      - internal
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -89,11 +85,3 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '/etc/ssl/certs:/etc/ssl/certs'
     command: --schedule @midnight --cleanup
-
-########################
-# GLOBAL CONFIGURATION #
-########################
-
-networks:
-  internal:
-  web:
