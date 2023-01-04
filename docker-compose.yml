@@ -31,10 +31,8 @@ services:
       options:
         max-file: '${LOG_FILE_NUM}'
         max-size: '${LOG_FILE_SIZE}'
-    networks:
-      - web
-    expose:
-      - 9000
+    ports:
+      - '${PORTAINER_PORT}:9000'
     environment:
       - TZ=${TZ}
       - PUID=${PUID}
@@ -65,9 +63,9 @@ services:
   # WATCHTOWER
   # Automatic Update Service for Docker
   # ----------------------------------------
-  watchtower_mastodon:
+  watchtower:
     image: containrrr/watchtower
-    container_name: watchtower_mastodon
+    container_name: watchtower
     restart: unless-stopped
     logging:
       driver: 'json-file'
@@ -91,3 +89,11 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '/etc/ssl/certs:/etc/ssl/certs'
     command: --schedule @midnight --cleanup
+
+########################
+# GLOBAL CONFIGURATION #
+########################
+
+networks:
+  internal:
+  web:
