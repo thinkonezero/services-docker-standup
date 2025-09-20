@@ -41,6 +41,35 @@ services:
       - '${BASE_DOCKER_PATH}/portainer:/data'
       - '/var/run/docker.sock:/var/run/docker.sock'
       - '/etc/localtime:/etc/localtime:ro'
+  
+  # ----------------------------------------
+  # SPEEDTEST
+  # Speedtest tracker
+  # ----------------------------------------
+  speedtest:
+    image: lscr.io/linuxserver/speedtest-tracker:latest
+    container_name: speedtest
+    restart: unless-stopped
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '${LOG_FILE_NUM}'
+        max-size: '${LOG_FILE_SIZE}'
+    ports:
+        - ${SPEEDTEST_PORT}:80
+    environment:
+        - TZ=${TZ}
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - APP_KEY=${SPEEDTEST_APP_KEY}
+        - APP_URL=${SPEEDTEST_APP_URL}
+        - ASSET_URL=${SPEEDTEST_ASSET_URL}
+        - APP_TIMEZONE=${TZ}
+        - DISPLAY_TIMEZONE=${TZ}
+        - DB_CONNECTION=sqlite
+    volumes:
+        - ${BASE_DOCKER_PATH}/speedtest-tracker:/config
+        - '/etc/localtime:/etc/localtime:ro'
 
   # ----------------------------------------
   # CLOUDFLARED
