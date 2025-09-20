@@ -37,6 +37,7 @@ services:
       - TZ=${TZ}
       - PUID=${PUID}
       - PGID=${PGID}
+      - CSP=false
     volumes:
       - '${BASE_DOCKER_PATH}/portainer:/data'
       - '/var/run/docker.sock:/var/run/docker.sock'
