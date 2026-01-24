@@ -92,7 +92,7 @@ SPEEDTEST_SCHEDULE=6 */2 * * *
 
 If this project has helped you in anyway, and you'd like to say thanks...
 
-[![Donate](https://img.shields.io/badge/Donate-SquareCash-brightgreen.svg)](https://cash.me/$phikai)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G71SUNID)
 
 _AFFILIATE DISCLOSURE: You can also support this project by purchasing a VPN Subscription via one of the links in this README._
 
