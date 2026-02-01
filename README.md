@@ -45,6 +45,8 @@ This configuration deploys essential maintenance and infrastructure services for
 - `SPEEDTEST_SCHEDULE`: Cron-style schedule for tests (default: every 2 hours).
 - `CLOUDFLARED_TOKEN`: Required for your Cloudflare Zero Trust tunnel.
 - `WATCHTOWER_NOTIFICATIONS`: Set to `email` for update alerts.
+- `WATCHTOWER_ROLLING_RESTART`: Set to `true` to update containers one at a time.
+- `WATCHTOWER_TIMEOUT`: The time to wait for a container to stop gracefully before a forced kill (default: 60s).
 
 ---
 
