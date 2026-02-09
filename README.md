@@ -22,7 +22,7 @@ This configuration deploys essential maintenance and infrastructure services for
 
 1. **Clone the project**:
    ```bash
-   git clone https://github.com/thinkonezero/services-docker-standup.git
+   git clone https://gitlab.com/thinkonezero/services-docker-standup.git
    ```
 2. **Environment Configuration**:
    - Copy `sample.env` to `.env`.
@@ -30,7 +30,7 @@ This configuration deploys essential maintenance and infrastructure services for
    - Configure `SMTP` settings if you want Watchtower to send update notifications.
 3. **Deploy**:
    ```bash
-   docker compose up -d
+   docker-compose up -d
    ```
 
 ## 🌐 Accessing Apps
