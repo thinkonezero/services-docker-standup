@@ -164,9 +164,20 @@ services:
     environment:
       - TZ=${TZ}
       - NTFY_LISTEN_HTTP=:8080
+      - NTFY_BASE_URL=${NTFY_BASE_URL}
+      - NTFY_AUTH_FILE=/var/lib/ntfy/auth.db
+      - NTFY_AUTH_DEFAULT_ACCESS=deny-all
+      - NTFY_ENABLE_LOGIN=true
+      - NTFY_REQUIRE_LOGIN=true
+      - NTFY_CACHE_FILE=/var/cache/ntfy/cache.db
+      - NTFY_SMTP_SENDER_ADDR=${SMTP_SERVER}:${SMTP_PORT}
+      - NTFY_SMTP_SENDER_FROM=${SMTP_FROM_ADDRESS}
+      - NTFY_SMTP_SENDER_USER=${SMTP_LOGIN}
+      - NTFY_SMTP_SENDER_PASS=${SMTP_PASSWORD}
+      - NTFY_AUTH_USERS=${NTFY_AUTH_USERS}
     user: '${PUID}:${PGID}'
     volumes:
       - '${BASE_DOCKER_PATH}/ntfy/cache:/var/cache/ntfy'
-      - '${BASE_DOCKER_PATH}/ntfy/config:/etc/ntfy'
+      - '${BASE_DOCKER_PATH}/ntfy/lib:/var/lib/ntfy'
     ports:
       - '${NTFY_PORT}:8080'
