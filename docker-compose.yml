@@ -163,7 +163,7 @@ services:
       - serve
     environment:
       - TZ=${TZ}
-      - NTFY_LISTEN_HTTP=":8080"
+      - NTFY_LISTEN_HTTP=:8080
     user: '${PUID}:${PGID}'
     volumes:
       - '${BASE_DOCKER_PATH}/ntfy/cache:/var/cache/ntfy'
