@@ -11,6 +11,7 @@ This configuration deploys essential maintenance and infrastructure services for
 | [Cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) | Connects your local services to the internet securely via Cloudflare Tunnels. |
 | [Watchtower](https://github.com/containrrr/watchtower) | Automates the process of updating your running Docker containers. |
 | [Gluetun](https://github.com/qdm12/gluetun) | VPN client (PIA) used for routing other containers (like Shelfmark). |
+| [ntfy](https://ntfy.sh/) | Send push notifications to your phone or desktop via HTTP. |
 
 ## 📋 Prerequisites
 
@@ -41,6 +42,7 @@ This configuration deploys essential maintenance and infrastructure services for
 | :--- | :--- |
 | **Portainer** | `http://<NAS_IP>:${PORTAINER_PORT}` |
 | **Speedtest** | `http://<NAS_IP>:${SPEEDTEST_PORT}` |
+| **ntfy** | `http://<NAS_IP>:${NTFY_PORT}` |
 
 ## ⚙️ Environment Variables
 
