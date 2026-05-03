@@ -10,6 +10,7 @@ This configuration deploys essential maintenance and infrastructure services for
 | [Speedtest-Tracker](https://docs.speedtest-tracker.dev/) | Automatically runs speed tests and graphs your internet performance over time. |
 | [Cloudflared](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) | Connects your local services to the internet securely via Cloudflare Tunnels. |
 | [Watchtower](https://github.com/containrrr/watchtower) | Automates the process of updating your running Docker containers. |
+| [Gluetun](https://github.com/qdm12/gluetun) | VPN client (PIA) used for routing other containers (like Shelfmark). |
 
 ## 📋 Prerequisites
 
@@ -28,6 +29,7 @@ This configuration deploys essential maintenance and infrastructure services for
    - Copy `sample.env` to `.env`.
    - Update `BASE_DOCKER_PATH` to your docker root.
    - Configure `SMTP` settings if you want Watchtower to send update notifications.
+   - Configure VPN credentials in `.env`.
 3. **Deploy**:
    ```bash
    docker-compose up -d
@@ -47,6 +49,9 @@ This configuration deploys essential maintenance and infrastructure services for
 - `WATCHTOWER_NOTIFICATIONS`: Set to `email` for update alerts.
 - `WATCHTOWER_ROLLING_RESTART`: Set to `true` to update containers one at a time.
 - `WATCHTOWER_TIMEOUT`: The time to wait for a container to stop gracefully before a forced kill (default: 60s).
+- `VPNUNAME`: Your VPN username (PIA).
+- `VPNPASS`: Your VPN password (PIA).
+- `VPN_REMOTE`: The VPN region or server address.
 
 ---
 
@@ -58,4 +63,4 @@ If this project has helped you, please consider supporting my work!
 
 # Disclaimer
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY.
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY.
