@@ -125,7 +125,7 @@ services:
   # VPN Client for Private Internet Access
   # ----------------------------------------
   gluetun:
-    image: qmcgaw/gluetun:latest
+    image: qmcgaw/gluetun:v3
     container_name: gluetun
     cap_add:
       - NET_ADMIN
