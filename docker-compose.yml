@@ -146,6 +146,9 @@ services:
       - OPENVPN_USER=${VPNUNAME}
       - OPENVPN_PASSWORD=${VPNPASS}
       - SERVER_REGIONS=${VPN_REMOTE}
+      - VPN_TYPE=openvpn
+      - OPENVPN_PROTOCOL=tcp
+      - UPDATER_ON_START=yes
       - UPDATER_PERIOD=480h
       - OPENVPN_MSSFIX=1200
       - TZ=${TZ}
