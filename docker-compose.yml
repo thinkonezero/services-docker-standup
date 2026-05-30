@@ -147,7 +147,7 @@ services:
       - OPENVPN_PASSWORD=${VPNPASS}
       - SERVER_REGIONS=${VPN_REMOTE}
       - VPN_TYPE=openvpn
-      - OPENVPN_PROTOCOL=tcp
+      - OPENVPN_PROTOCOL=udp
       - UPDATER_ON_START=yes
       - UPDATER_PERIOD=480h
       - OPENVPN_MSSFIX=1200
