@@ -131,6 +131,8 @@ services:
       - NET_ADMIN
     devices:
       - /dev/net/tun:/dev/net/tun
+    volumes:
+      - '${BASE_DOCKER_PATH}/gluetun:/gluetun'
     restart: unless-stopped
     logging:
       driver: 'json-file'
@@ -144,6 +146,8 @@ services:
       - OPENVPN_USER=${VPNUNAME}
       - OPENVPN_PASSWORD=${VPNPASS}
       - SERVER_REGIONS=${VPN_REMOTE}
+      - UPDATER_PERIOD=480h
+      - OPENVPN_MSSFIX=1200
       - TZ=${TZ}
 
   # ----------------------------------------
